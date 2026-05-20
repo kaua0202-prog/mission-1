@@ -1,1 +1,1 @@
-# Minha primeira missão GitHub
+Estou aprendendo Git e GitHub.
