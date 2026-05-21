@@ -1,0 +1,3 @@
+- estudar Git
+- aprender Linux
+- terminar mission-1
