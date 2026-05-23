@@ -1,3 +1,4 @@
+
 # 🚀 Trilha de Conhecimento DevOps
 Repositório criado para documentar minha evolução prática em Linux, Git, GitHub, redes e troubleshooting.
 
@@ -286,4 +287,4 @@ evidencias/
 ---
 
 ## 🎯 Objetivo
-Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura.
+Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura..
