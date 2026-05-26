@@ -286,4 +286,4 @@ evidencias/
 ---
 
 ## 🎯 Objetivo
-Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura.
+Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura no menor tempo possvel.
