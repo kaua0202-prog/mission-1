@@ -196,7 +196,6 @@ Os prints estão organizados na pasta `evidencias/mission-1`.
 
 ### Introdução
 Nessa missão aprendi a investigar processos, monitorar portas, analisar conexões de rede e trabalhar com troubleshooting no Linux.
-
 ### Listagem de processos
 ```bash
 ps aux
@@ -220,7 +219,7 @@ sudo ss -tulnp | grep :80
 
 ### Monitoramento de recursos
 ```bash
-top
+top 
 # Exibe em tempo real o uso de CPU e memória de cada processo
 # É o gerenciador de tarefas do Linux
 ```
@@ -250,7 +249,7 @@ sudo kill -9 PID
 ```bash
 journalctl -f
 # Exibe os logs do sistema em tempo real
-# Útil para monitorar erros e eventos enquanto acontecem
+# Úlil para monitorar erros e eventos enquanto acontecem
 ```
 
 ### Reload do Nginx sem derrubar o serviço
@@ -287,4 +286,4 @@ evidencias/
 ---
 
 ## 🎯 Objetivo
-Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura..
+Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura.
