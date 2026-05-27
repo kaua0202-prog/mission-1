@@ -1,289 +1,118 @@
+    README
 
-# 🚀 Trilha de Conhecimento DevOps
+🚀 Trilha de Conhecimento DevOps
+
 Repositório criado para documentar minha evolução prática em Linux, Git, GitHub, redes e troubleshooting.
+📌 Mission 1 — Git, GitHub e Linux
+Introdução
 
----
-
-## 📌 Mission 1 — Git, GitHub e Linux
-
-### Introdução
 Projeto focado em aprender os fundamentos de Git, GitHub e Linux.
+O que aprendi
+Comando 	O que faz
+git init 	Inicializa um repositório Git na pasta atual
+git add 	Prepara os arquivos para serem commitados
+git commit 	Salva um ponto na história do projeto com uma mensagem
+git push 	Envia os commits para o GitHub
+git pull 	Baixa as atualizações do GitHub para o computador
+branches 	Cria ramificações para desenvolver sem afetar o código principal
+merge 	Une duas branches em uma só
+clone 	Copia um repositório do GitHub para o computador
+Tecnologias utilizadas
 
-### O que aprendi
+    Git
+    GitHub
+    Ubuntu Linux
 
-| Comando | O que faz |
-|---|---|
-| `git init` | Inicializa um repositório Git na pasta atual |
-| `git add` | Prepara os arquivos para serem commitados |
-| `git commit` | Salva um ponto na história do projeto com uma mensagem |
-| `git push` | Envia os commits para o GitHub |
-| `git pull` | Baixa as atualizações do GitHub para o computador |
-| `branches` | Cria ramificações para desenvolver sem afetar o código principal |
-| `merge` | Une duas branches em uma só |
-| `clone` | Copia um repositório do GitHub para o computador |
+Comando utilizado para descobrir o IP
 
-### Tecnologias utilizadas
-* Git
-* GitHub
-* Ubuntu Linux
-
-### Comando utilizado para descobrir o IP
-```bash
 hostname -I
 # Exibe o endereço IP privado da máquina na rede local
-```
 
-### Como resolvi o erro de permissão do GitHub
-```bash
+Como resolvi o erro de permissão do GitHub
+
 gh auth login
 # Autentica a conta do GitHub pelo terminal, permitindo fazer push sem erro de permissão
-```
 
-### Evidências
-Os prints estão organizados na pasta `evidencias/mission-1`.
+Evidências
 
----
+Os prints estão organizados na pasta evidencias/mission-1.
+📌 Mission 2 — Investigação de Redes e Processos no Linux
+Introdução
 
-## 📌 Mission 2 — Investigação de Redes e Processos no Linux
-
-### Introdução
 Nessa missão aprendi a investigar processos, monitorar portas, analisar conexões de rede e trabalhar com troubleshooting no Linux.
+Listagem de processos
 
-### Listagem de processos
-```bash
 ps aux
 # Lista todos os processos rodando no sistema com detalhes de CPU e memória
-```
 
-### Encontrando processos do Nginx
-```bash
+Encontrando processos do Nginx
+
 ps aux | grep nginx
 # Filtra a lista de processos mostrando apenas os relacionados ao Nginx
 # O | (pipe) passa a saída de um comando para o outro
-```
 
-### Descobrindo qual PID estava usando a porta 80
-```bash
+Descobrindo qual PID estava usando a porta 80
+
 sudo ss -tulnp | grep :80
 # ss -tulnp → mostra todas as portas abertas e seus processos
 # grep :80  → filtra apenas a porta 80
-# Resultado: confirmei que o Nginx estava usando a porta 80
-```
 
-### Monitoramento de recursos
-```bash
+Monitoramento de recursos
+
 top
 # Exibe em tempo real o uso de CPU e memória de cada processo
 # É o gerenciador de tarefas do Linux
-```
 
-### Verificando conexões de rede
-```bash
+Verificando conexões de rede
+
 sudo ss -tanp | grep :80
 # Mostra conexões ativas na porta 80
 # ESTABLISHED = conexão aberta com algum cliente
-```
 
-### Simulação de incidente
-```bash
+Simulação de incidente
+
 sudo kill -9 PID
 # Força o encerramento imediato do processo pelo seu PID
 # Substitua PID pelo número do processo encontrado no ss ou ps
-```
 
-### Diferença entre kill normal e kill -9
+Diferença entre kill normal e kill -9
+Comando 	Comportamento
+kill PID 	Pede ao processo que encerre corretamente, liberando recursos
+kill -9 PID 	Força encerramento imediato, sem permitir resposta do processo
+Acompanhamento de logs em tempo real
 
-| Comando | Comportamento |
-|---|---|
-| `kill PID` | Pede ao processo que encerre corretamente, liberando recursos |
-| `kill -9 PID` | Força encerramento imediato, sem permitir resposta do processo |
-
-### Acompanhamento de logs em tempo real
-```bash
 journalctl -f
 # Exibe os logs do sistema em tempo real
 # Útil para monitorar erros e eventos enquanto acontecem
-```
 
-### Reload do Nginx sem derrubar o serviço
-```bash
+Reload do Nginx sem derrubar o serviço
+
 sudo nginx -s reload
 # Recarrega as configurações do Nginx sem interromper conexões ativas
 # Sites em uso não percebem nada durante o reload
-```
 
-### O que aprendi na Mission 2
-* Investigação de processos no Linux
-* Monitoramento de portas
-* Uso do comando ss
-* Troubleshooting básico
-* Gerenciamento de serviços
-* Uso de sinais no Linux
-* Logs do sistema
-* Observabilidade básica
+O que aprendi na Mission 2
 
-### Tecnologias utilizadas
-* Ubuntu Linux
-* Nginx
-* Apache2
-* Git
-* GitHub
+    Investigação de processos no Linux
+    Monitoramento de portas
+    Uso do comando ss
+    Troubleshooting básico
+    Gerenciamento de serviços
+    Uso de sinais no Linux
+    Logs do sistema
+    Observabilidade básica
 
----
+Tecnologias utilizadas
 
-## 📌 Mission 3 — Redes e DevOps
+    Ubuntu Linux
+    Nginx
+    Apache2
+    Git
+    GitHub
 
-### Introdução
-Nessa missão aprendi os fundamentos de redes, protocolos, ferramentas de diagnóstico e containers com Docker.
+📂 Organização do Projeto
 
-### Conceitos aprendidos
-* IP privado e público, máscara de sub-rede e gateway
-* DNS — tradução de domínios para IPs
-* Protocolos HTTP, HTTPS, TCP, UDP e SSH
-* Modelo OSI — as 7 camadas da rede
-* Firewall, roteamento e proxy reverso
-* Containers Docker e redes internas
+evidencias/ ├── mission-1 └── mission-2
+🎯 Objetivo
 
-### Comandos de rede
-```bash
-hostname -I
-# 🚀 Trilha de Conhecimento DevOps
-Repositório criado para documentar minha evolução prática em Linux, Git, GitHub, redes e troubleshooting.
-
----
-
-## 📌 Mission 1 — Git, GitHub e Linux
-
-### Introdução
-Projeto focado em aprender os fundamentos de Git, GitHub e Linux.
-
-### O que aprendi
-
-| Comando | O que faz |
-|---|---|
-| `git init` | Inicializa um repositório Git na pasta atual |
-| `git add` | Prepara os arquivos para serem commitados |
-| `git commit` | Salva um ponto na história do projeto com uma mensagem |
-| `git push` | Envia os commits para o GitHub |
-| `git pull` | Baixa as atualizações do GitHub para o computador |
-| `branches` | Cria ramificações para desenvolver sem afetar o código principal |
-| `merge` | Une duas branches em uma só |
-| `clone` | Copia um repositório do GitHub para o computador |
-
-### Tecnologias utilizadas
-* Git
-* GitHub
-* Ubuntu Linux
-
-### Comando utilizado para descobrir o IP
-```bash
-hostname -I
-# Exibe o endereço IP privado da máquina na rede local
-```
-
-### Como resolvi o erro de permissão do GitHub
-```bash
-gh auth login
-# Autentica a conta do GitHub pelo terminal, permitindo fazer push sem erro de permissão
-```
-
-### Evidências
-Os prints estão organizados na pasta `evidencias/mission-1`.
-
----
-
-## 📌 Mission 2 — Investigação de Redes e Processos no Linux
-
-### Introdução
-Nessa missão aprendi a investigar processos, monitorar portas, analisar conexões de rede e trabalhar com troubleshooting no Linux.
-### Listagem de processos
-```bash
-ps aux
-# Lista todos os processos rodando no sistema com detalhes de CPU e memória
-```
-
-### Encontrando processos do Nginx
-```bash
-ps aux | grep nginx
-# Filtra a lista de processos mostrando apenas os relacionados ao Nginx
-# O | (pipe) passa a saída de um comando para o outro
-```
-
-### Descobrindo qual PID estava usando a porta 80
-```bash
-sudo ss -tulnp | grep :80
-# ss -tulnp → mostra todas as portas abertas e seus processos
-# grep :80  → filtra apenas a porta 80
-# Resultado: confirmei que o Nginx estava usando a porta 80
-```
-
-### Monitoramento de recursos
-```bash
-top 
-# Exibe em tempo real o uso de CPU e memória de cada processo
-# É o gerenciador de tarefas do Linux
-```
-
-### Verificando conexões de rede
-```bash
-sudo ss -tanp | grep :80
-# Mostra conexões ativas na porta 80
-# ESTABLISHED = conexão aberta com algum cliente
-```
-
-### Simulação de incidente
-```bash
-sudo kill -9 PID
-# Força o encerramento imediato do processo pelo seu PID
-# Substitua PID pelo número do processo encontrado no ss ou ps
-```
-
-### Diferença entre kill normal e kill -9
-
-| Comando | Comportamento |
-|---|---|
-| `kill PID` | Pede ao processo que encerre corretamente, liberando recursos |
-| `kill -9 PID` | Força encerramento imediato, sem permitir resposta do processo |
-
-### Acompanhamento de logs em tempo real
-```bash
-journalctl -f
-# Exibe os logs do sistema em tempo real
-# Úlil para monitorar erros e eventos enquanto acontecem
-```
-
-### Reload do Nginx sem derrubar o serviço
-```bash
-sudo nginx -s reload
-# Recarrega as configurações do Nginx sem interromper conexões ativas
-# Sites em uso não percebem nada durante o reload
-```
-
-### O que aprendi na Mission 2
-* Investigação de processos no Linux
-* Monitoramento de portas
-* Uso do comando ss
-* Troubleshooting básico
-* Gerenciamento de serviços
-* Uso de sinais no Linux
-* Logs do sistema
-* Observabilidade básica
-
-### Tecnologias utilizadas
-* Ubuntu Linux
-* Nginx
-* Apache2
-* Git
-* GitHub
-
----
-
-## 📂 Organização do Projeto
-evidencias/
-├── mission-1
-└── mission-2
-
----
-
-## 🎯 Objetivo
-Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura no menor tempo que eu conseguir.
+Evoluir continuamente meus conhecimentos em Linux, redes, Git, GitHub, DevOps e infraestrutura.
